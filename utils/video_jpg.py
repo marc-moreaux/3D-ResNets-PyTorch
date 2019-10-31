@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 ''' Use this code to convert directory of videos into directories of
 directories of JPG.
 
