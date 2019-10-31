@@ -61,10 +61,8 @@ if __name__ == "__main__":
     # Get args
     dir_path = sys.argv[1]
     dst_dir_path = sys.argv[2]
-    if len(sys.argv) > 3:
-        video_extention = sys.argv[3]
-    if len(sys.argv) > 4:
-        dataset_mode = True
+    video_extention = sys.argv[3] if len(sys.argv) > 3 else '.mp4'
+    dataset_mode = True if len(sys.argv) > 4 else False
 
     # Select dataset mode or single directory mode
     if not dataset_mode:
@@ -79,7 +77,7 @@ if __name__ == "__main__":
             # Create jpg class dir
             dst_class_path = os.path.join(dst_dir_path, class_name)
             if not os.path.exists(dst_class_path):
-                os.mkdir(dst_class_path)
+                os.makedirs(dst_class_path)
 
             # Convert dir of videos to dir of dir of jpgs
             dir_video_to_jpgs(class_path, dst_class_path, video_extention)
