@@ -52,6 +52,7 @@ def convert_hmdb51_csv_to_activitynet_json(csv_dir_path, split_index, dst_json_p
 
     with open(dst_json_path, 'w') as dst_file:
         json.dump(dst_data, dst_file)
+    print('{} written'.format(dst_json_path))
 
 if __name__ == '__main__':
     csv_dir_path = sys.argv[1]

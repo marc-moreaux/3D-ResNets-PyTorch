@@ -140,97 +140,71 @@ cd ./ffmpeg-3.3.3-64bit-static/; sudo cp ffmpeg ffprobe /usr/local/bin;
 ### ActivityNet
 
 * Download videos using [the official crawler](https://github.com/activitynet/ActivityNet/tree/master/Crawler).
-* Convert from avi to jpg files using ```utils/video_jpg.py```
+* Convert from avi to jpg files 
+```./utils/video_jpg.py /avi/path /dst/path```
 
-```bash
-./utils/video_jpg.py /avi/path /dst/path
-```
-
-* Generate fps files using ```utils/fps.py```
-
-```bash
-python utils/fps.py avi_video_directory jpg_video_directory
-```
+* Generate fps files 
+```python utils/fps.py avi_video_directory jpg_video_directory```
 
 ### Kinetics
 
 * Download videos using [the official crawler](https://github.com/activitynet/ActivityNet/tree/master/Crawler/Kinetics).
   * Locate test set in ```video_directory/test```.
 
-* Convert from avi to jpg files using ```utils/video_jpg.py```
-```bash
-./utils/video_jpg.py /avi/path /jpgs/path .mp4 dataset
-```
+* Convert from avi to jpg files 
+```./utils/video_jpg.py /avi/path /jpgs/path .mp4 dataset```
 
-* Generate n_frames files using ```utils/n_frames.py```
-```bash
-./utils/n_frames.py /jpgs/path kinetics
-```
+* Generate n_frames files 
+```./utils/n_frames.py /jpgs/path kinetics```
 
-* Generate annotation file in json format similar to ActivityNet using ```utils/kinetics_json.py```
+* Generate annotation file in json format similar to ActivityNet 
+```python utils/kinetics_json.py train_csv_path val_csv_path test_csv_path dst_json_path ```
   * The CSV files (kinetics_{train, val, test}.csv) are included in the crawler.
-```bash
-python utils/kinetics_json.py train_csv_path val_csv_path test_csv_path dst_json_path
-```
+
 
 ### UCF-101
 
 * Download videos and train/test splits [here](http://crcv.ucf.edu/data/UCF101.php).
 
-* Convert from avi to jpg files using ```utils/video_jpg.py```
-```bash
-./utils/video_jpg.py /avi/path /jpgs/path .avi dataset
-```
+* Convert from avi to jpg files 
+```./utils/video_jpg.py /avi/path /jpgs/path .avi dataset```
 
-* Generate n_frames files using ```utils/n_frames.py```
-```bash
-./utils/n_frames.py /jpgs/path
-```
+* Generate n_frames files 
+```./utils/n_frames.py /jpgs/path```
 
-* Generate annotation file in json format similar to ActivityNet using ```utils/ucf101_json.py```
+* Generate annotation file in json format similar to ActivityNet 
+```python utils/ucf101_json.py annotation_dir_path ```
   * ```annotation_dir_path``` includes classInd.txt, trainlist0{1, 2, 3}.txt, testlist0{1, 2, 3}.txt
-```bash
-python utils/ucf101_json.py annotation_dir_path
-```
+
 
 ### HMDB-51
 
 * Download videos and train/test splits [here](http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/).
 
-* Convert from avi to jpg files using ```utils/video_jpg.py```
-```bash
-./utils/video_jpg.py /avi/path /jpgs/path .avi dataset
-```
+* Convert from avi to jpg files 
+```./utils/video_jpg.py /avi/path /jpgs/path .avi dataset```
 
-* Generate n_frames files using ```utils/n_frames.py```
-```bash
-./utils/n_frames.py /jpgs/path
-```
+* Generate n_frames files 
+```./utils/n_frames.py /jpgs/path```
 
-* Generate annotation file in json format similar to ActivityNet using ```utils/hmdb51_json.py```
+* Generate annotation file in json format similar to ActivityNet 
+```python utils/hmdb51_json.py annotation_dir_path ```
   * ```annotation_dir_path``` includes brush_hair_test_split1.txt, ...
-```bash
-python utils/hmdb51_json.py annotation_dir_path
-```
+
 
 ### Epic Kitchen
-* Download videos and train/test splits [here]().
+* Download videos and train/test splits [here](http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/).
 
-* Convert from avi to jpg files using ```utils/video_jpg.py```
-```bash
-./utils/video_jpg.py /avi/path /jpgs/path .MP4 dataset
-```
+* Convert from avi to jpg files 
+```./utils/video_jpg.py /avi/path /jpgs/path .avi dataset```
 
-* Generate n_frames files using ```utils/n_frames.py```
-```bash
-./utils/n_frames.py /jpgs/path
-```
+* Generate n_frames files 
+```./utils/n_frames.py /jpgs/path```
 
-* Generate annotation file in json format similar to ActivityNet using ```utils/hmdb51_json.py```
+* Generate annotation file in json format similar to ActivityNet 
+```python utils/hmdb51_json.py annotation_dir_path ```
   * ```annotation_dir_path``` includes brush_hair_test_split1.txt, ...
-```bash
-python utils/hmdb51_json.py annotation_dir_path
-```
+
 
 
 ## Running the code
